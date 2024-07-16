@@ -1,0 +1,54 @@
+Hi Team, 
+This is my First application project on Volante Tech.
+
+I created the Dynamic User Details Application in angular with Firebase Firestore Database.
+I have some pre build user list on my firestore DB. This application is not have sign Up functionalities for time being.
+You can authenticate user with login page with prebuild user list. 
+
+This application was created with mid level concepts on angular. You can refer the concepts below,
+1. The data transfer between child to parent with @Output event emiter method and parent to child with @Input method
+2. I used Firebase firestore database for Data handling on Application, Get and Update methods are implemented.
+3. Dynamic data loading as per user logged in
+4. Firebase authentication system for application Login page.
+5. Bootstrap used for styling and Grid system also
+
+the list are : 
+
+user name : gobi@gmail.com
+pass : 12345678
+
+user name : ezhil@gmail.com
+pass : 12345678
+
+user name : thusha@gmail.com
+pass : 12345678
+
+user name : ruhi@gmail.com
+pass : 12345678
+
+user name : karthik@gmail.com
+pass : 12345678
+
+user name : kesav@gmail.com
+pass : 12345678
+
+use this above credentials for login for a different users list.
+
+Cinfiguration
+
+1. Clone
+
+    use Git for clone this code from Repo. 
+    "git clone https://github.com/GobinathRajendhiran/User_Details_App.git"
+    and do "npm install" this command on application directory to install packages. 
+
+2. Run
+    On application directory type "ng serve" command to run this application.
+
+3. How to use
+    choose one credentials on above list and enter these details on login page to authenticate applcation. 
+    You can use side navebar to see all data of every user. and also you can edit and update every user's hobbie list on firebase with edit functionalities on hobbies page.
+
+4. Note
+    this application only created for learning purpose on Volante.
+    Thankyou
