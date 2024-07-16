@@ -1,0 +1,11 @@
+<div class="userImageOfHomePage d-flex justify-content-center">
+    <img src="{{fromParent.profileImage}}" alt="User Image" class="homePageUserImage">
+    <div class="UserProfileHeadText">{{fromParent.name}}</div>
+</div>
+<div role="button" (click)="selectedNavLink('personalDetails')" [ngClass]="selectedNavLinkType == 'personalDetails' ? 'selectedNavBarLink' : 'navBarLinks'">Personal Details</div>
+<div (click)="selectedNavLink('education')" [ngClass]="selectedNavLinkType == 'education' ? 'selectedNavBarLink' : 'navBarLinks'">Education</div>
+<div (click)="selectedNavLink('contactDetails')" [ngClass]="selectedNavLinkType == 'contactDetails' ? 'selectedNavBarLink' : 'navBarLinks'">Contact details</div>
+<div (click)="selectedNavLink('hobbies')" [ngClass]="selectedNavLinkType == 'hobbies' ? 'selectedNavBarLink' : 'navBarLinks'">Hobbies</div>
+<div class="signOutButtonSection d-flex justify-content-center">
+    <button class="btn btn-dark mt-5" (click)="signoutFromUser()">Sign Out</button>
+</div>

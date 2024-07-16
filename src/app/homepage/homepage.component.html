@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="row mainSectionOfHomePage">
+        <div class="col-2 bg-primary leftsideNavBarOfHomePage">
+            <app-home-navbar [fromParent]="userData" (childEvent)="selectedNavLink($event)"></app-home-navbar>
+        </div>
+        <div class="col-10 rightSideDetailSectionForHome">
+            <div class="rightSideMainSectionForPersonalData" [ngSwitch]="selectedNavLinkType">
+                <div *ngSwitchCase="'personalDetails'">
+                    <h1>Personal Details</h1>
+                    <b>Age</b> : {{selectedNavLinkData.age || 'Null'}} <br>
+                    <b>Gender</b> : {{selectedNavLinkData.gender || 'Null'}} <br>
+                    <b>Maritial Status</b> : {{selectedNavLinkData.maritalStatus || 'Null'}} <br>
+                    <b>Nationality</b> : {{selectedNavLinkData.nationality || 'Null'}} <br>
+                    <b>About</b> : {{userData.about + 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus provident nesciunt suscipit est repellat ipsam, itaque dolore libero fugiat expedita voluptates, illum atque rem, voluptas aut totam tempora? Hic dicta nemo, temporibus obcaecati unde modi blanditiis alias nobis inventore, iusto rem, doloribus sed laborum molestiae vel. Labore tempora ratione atque?'}}
+                    <div *ngFor="let data of userData.workHistory; let j = index" class="mt-5">
+                        <div>My {{j == 0 ? 'First' : j == 1 ? 'Second' : j == 3 ? 'Third' : 'Other'}} Company Details :</div>
+                        <div class="WorkHistoryDetailsOfApp">
+                            <b>Company</b> : {{data.company}} <br>
+                            <b>Duration</b> : {{data.duration}} <br>
+                            <b>Role</b> : {{data.role}} <br>
+                            <b>My Responsibilities</b> : 
+                            <div *ngFor="let data2 of data.responsibilities; let i = index">
+                                <b>{{i + 1}}</b> : {{data2}}
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <div *ngSwitchCase="'contactDetails'">
+                    <h1>Contact Details</h1>
+                    <b>Name</b> : {{userData.name}} <br>
+                    <b>Email</b> : {{selectedNavLinkData.email || 'Null'}} <br>
+                    <b>GitHub</b> : {{selectedNavLinkData.github || 'Null'}} <br>
+                    <b>LinkdIn</b> : {{selectedNavLinkData.linkedIn || 'Null'}} <br>
+                    <b>Phone</b> : {{selectedNavLinkData.phone || 'Null'}} <br>
+                    <b>Id</b> : {{userData.id}} <br>
+                    <b>Experience</b> : {{userData.experience}} <br>
+                    <b>Location</b> : {{userData.location}} <br>
+                    <b>Summary</b> : {{userData.summary}}
+                </div>
+                <div *ngSwitchCase="'education'">
+                    <h1>Education</h1>
+                    <b>Degree</b> : {{selectedNavLinkData.degree || 'Null'}} <br>
+                    <b>university</b> : {{selectedNavLinkData.university || 'Null'}} <br>
+                    <b>Graduation</b> : {{selectedNavLinkData.yearOfGraduation || 'Null'}} <br>
+                    <b>Degree</b> : {{selectedNavLinkData.degree || 'Null'}} <br>
+                    <b>Summary</b> : {{userData.summary || 'Null'}} <br>
+                    <b>Working Hours</b> : {{userData.otherDetails.preferredWorkingHours}} <br>
+                    <b>Certifications</b> : 
+                    <div *ngFor="let data of userData.otherDetails.certifications; let i = index">
+                        <b>{{i + 1}}</b> : {{data}}
+                    </div>
+                    <b>Language Spoken</b> :
+                    <div *ngFor="let data2 of userData.otherDetails.languagesSpoken; let j = index">
+                        <b>{{j + 1}}</b> : {{data2}}
+                    </div>
+                </div>
+                <div *ngSwitchCase="'hobbies'">
+                    <!-- success alert -->
+                    <div class="alert alert-success" id="hobbyUpdateSuccessAlert" role="alert">
+                        Your Hobbies updated Successfully
+                    </div>
+                    <!-- danger alert -->
+                    <div class="alert alert-danger" id="hobbyUpdateFailureAlert" role="alert">
+                        Unable to update hobbies
+                    </div>
+                    <h1>Hobbies</h1>
+                    <div *ngFor="let i of selectedNavLinkData; let in = index">
+                        <b>{{in + 1}}</b> : {{i}}
+                    </div>
+                    <button type="button" class="btn btn-primary mt-3 mb-3" (click)="editHobbyList()">Edit hobbies</button>
+                    
+                    <div *ngIf="enableHobbieEditSection">
+                        <h5>Edit Here</h5>
+                        <div class="hobbyEditBox">
+                            <div *ngFor="let hby of HobbiesList; let i = index" class="hobbiesPills">{{hby}} <span class="pillsCrossBtn" (click)="removePills(i)">x</span></div>
+                            <input type="text"  id="pillsInputBox" class="pillsInputBox" [(ngModel)]="hobbyPillInput" (keyup.enter)="addPillsToArray()">
+                        </div>
+                        <button class="btn btn-primary" (click)="updateNewHobbiesList()" [disabled]="HobbiesList.length == 0">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+body {
+    background: rgb(175,0,255);
+    background: linear-gradient(342deg, rgba(175,0,255,1) 0%, rgba(0,219,255,1) 100%);
+}
+
+.loginMainContainer {
+    margin-top: 80px;
+}
+
+.innerMainDivForLogin {
+    border: 1px solid #071952;
+    border-radius: 10px;
+}
+
+/* login page first half page */
+
+.loginPageLeftSidePanelSection {
+    background-image: url('../../assets/images/loginPageFirstPanelImage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #071952;
+}
+
+
+/* login second half page */
+
+.loginPanelRightSideSection {
+    padding: 50px 30px 50px 100px;
+}
+
+.loginHeadText {
+    color: #071952;
+}
+
+.loginWelcomeGreetingsText {
+    color: #666;
+}
+
+.userNameLabel, .passwordLabel {
+    font-size: 14px;
+    color: black;
+    margin-top: 10px;
+}
+
+.userNameInputBox, .passwordInputBox {
+    border: 1px solid #088395;
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 40px;
+    width: 70%;
+}
+
+.userNameInputBox:hover, .passwordInputBox:hover {
+    border: 1px solid #37B7C3;
+}
+
+.checkboxOfLoginPage {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.loginButton {
+    width: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #37B7C3;
+    color: #ffffff;
+    border: 1px solid #37B7C3;
+    margin-top: 20px;
+}
+
+.loginButton:hover {
+    color: #37B7C3;
+    background-color: #ffffff;
+}
+
+.loginButton:disabled {
+    background-color: #666;
+    border: 1px solid #666;
+    color: #fff;
+}

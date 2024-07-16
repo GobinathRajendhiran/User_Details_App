@@ -1,0 +1,43 @@
+/* left NAV bar of Home page */
+.userImageOfHomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homePageUserImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.UserProfileHeadText {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navBarLinks {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #EBF4F6;
+    border-bottom: 1px solid #EBF4F6;
+    cursor: pointer;
+    padding-left: 8px;
+}
+
+.navBarLinks:hover {
+    color: #EBF4F6;
+}
+
+.selectedNavBarLink {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    cursor: pointer;
+    padding-left: 8px;
+    background-color: #406381;
+}

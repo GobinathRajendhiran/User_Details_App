@@ -1,0 +1,30 @@
+<!-- 
+3. active menu heighlight on navbar and give titile for every page
+4. set crud operation for Hobbies
+1. profile photo change
+2. company name 1 to first 
+6. seperate navbar and home page data section into seperate component
+-->
+
+<div class="container loginMainContainer">
+    <div class="row innerMainDivForLogin">
+        <div class="col-6 loginPageLeftSidePanelSection">
+            <h1>Welcome</h1>
+        </div>
+        <form class="col-6 loginPanelRightSideSection" [formGroup]="loginForm">
+            <h1 class="loginHeadText">Login</h1>
+            <p class="loginWelcomeGreetingsText">welcome to my application on volante</p>
+            <!-- user Name Section -->
+            <div>
+                <label for="userId" class="userNameLabel">User email</label> <br>
+                <input type="text" id="userId" class="userNameInputBox" formControlName="userId">
+            </div>
+            <!-- user password section -->
+            <div>
+                <label for="password" class="passwordLabel">Password</label> <br>
+                <input type="password" id="password" class="passwordInputBox" formControlName="password">
+            </div>
+            <button class="loginButton" type="button" [disabled]="!loginForm.valid" (click)="loginToAccount()">Log In</button>
+        </form>
+    </div>
+</div>
